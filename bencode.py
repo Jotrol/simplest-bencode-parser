@@ -53,6 +53,7 @@ def BDecode(data: bytes):
     if offset != len(data):
         raise ValueError(f"Expected EOF, got {len(data) - offset} bytes left")
     return result
+
 def BEncode(data):
     result = b''
     if isinstance(data, str):
@@ -75,6 +76,7 @@ def BEncode(data):
     else:
         raise ValueError("bencode only supports bytes, int, list and dict")
     return result
+
 def tests():
     encode_test_int = 123
     encode_test_str = "Hello World!"
