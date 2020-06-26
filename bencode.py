@@ -48,10 +48,10 @@ def BDecode(data: bytes):
             return parseDict()
         elif data[offset] in b'123456789':
             return parseString()
-        raise ValueError('Unknown type specifiers: {}'.format(chr(data[offset]))
+        raise ValueError('Unknown type specifiers: {}'.format(chr(data[offset])))
     result = parse()
     if offset != len(data):
-        raise ValueError("Expected EOF, got {} bytes left".format(len(data) - offset)
+        raise ValueError("Expected EOF, got {} bytes left".format(len(data) - offset))
     return result
 
 def BEncode(data):
